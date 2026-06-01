@@ -23,4 +23,8 @@ public class Lecture {
     @ManyToOne
     @JoinColumn(name = "lecture_id")
     private Section section;
+
+    @OneToOne
+    @JoinColumn(name = "resource_id")
+    private Resources resources;
 }
