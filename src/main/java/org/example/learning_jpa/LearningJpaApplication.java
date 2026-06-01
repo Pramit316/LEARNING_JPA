@@ -14,18 +14,18 @@ public class LearningJpaApplication {
         SpringApplication.run(LearningJpaApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner(
-            AuthorRepository repository
-    ) {
-        return args -> {
-            var author = Author.builder()
-                    .firstName("pramit")
-                    .lastName("bhattarai")
-                    .age(23)
-                    .email("primeshipbas@gmail.com")
-                    .build();
-            repository.save(author);
-        };
-    }
+//    @Bean
+//    public CommandLineRunner commandLineRunner(
+//            AuthorRepository repository
+//    ) {
+//        return args -> {
+//            var author = Author.builder()
+//                    .firstName("pramit")
+//                    .lastName("bhattarai")
+//                    .age(23)
+//                    .email("primeshipbas@gmail.com")
+//                    .build();
+//            repository.save(author);
+//        };
+//    }
 }
