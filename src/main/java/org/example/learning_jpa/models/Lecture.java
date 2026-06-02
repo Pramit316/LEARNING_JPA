@@ -2,21 +2,16 @@ package org.example.learning_jpa.models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Lecture {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Lecture extends BaseEntity{
 
     private String name;
 
