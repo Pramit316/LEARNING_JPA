@@ -1,16 +1,23 @@
 package org.example.learning_jpa.models;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-public class Resources extends BaseEntity{
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Resources {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
 
     private String name;
 
