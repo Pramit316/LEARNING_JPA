@@ -1,7 +1,9 @@
 package org.example.learning_jpa;
 
 import org.example.learning_jpa.models.Author;
+import org.example.learning_jpa.models.Video;
 import org.example.learning_jpa.repository.AuthorRepository;
+import org.example.learning_jpa.repository.VideoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,11 +16,12 @@ public class LearningJpaApplication {
         SpringApplication.run(LearningJpaApplication.class, args);
     }
 
-//    @Bean
-//    public CommandLineRunner commandLineRunner(
-//            AuthorRepository repository
-//    ) {
-//        return args -> {
+    @Bean
+    public CommandLineRunner commandLineRunner(
+            AuthorRepository repository,
+            VideoRepository videoRepository
+    ) {
+        return args -> {
 //            var author = Author.builder()
 //                    .firstName("pramit")
 //                    .lastName("bhattarai")
@@ -26,6 +29,12 @@ public class LearningJpaApplication {
 //                    .email("primeshipbas@gmail.com")
 //                    .build();
 //            repository.save(author);
-//        };
-//    }
+            var video = Video.builder()
+                    .name("abc")
+                    .length(5)
+                    .build();
+
+            videoRepository.save(video);
+        };
+    }
 }
