@@ -1,6 +1,7 @@
 package org.example.learning_jpa.models;
 
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
+@DiscriminatorValue("T")
 public class Text extends Resources{
     private String content;
 }
