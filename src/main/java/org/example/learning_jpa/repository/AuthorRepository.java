@@ -12,6 +12,9 @@ public interface AuthorRepository extends JpaRepository<Author, Integer> {
     //SELECT * FROM author WHERE first_name = ''
     List<Author> findAllByFirstNameIgnoreCase(String fn);
 
+    //SELECT * FROM author WHERE last_name = ''
+    List<Author> findAllByLastNameIgnoreCase(String fn);
+
     //SELECT * FROM author WHERE first_name like '%al%'
     List<Author> findAllByFirstNameContainingIgnoreCase(String fn);
 
