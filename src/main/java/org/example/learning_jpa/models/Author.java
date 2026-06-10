@@ -3,6 +3,7 @@ package org.example.learning_jpa.models;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.apache.commons.lang3.builder.HashCodeExclude;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -14,6 +15,10 @@ import java.util.List;
 @SuperBuilder
 @Entity
 @Table(name="AUTHOR_TBL")
+@NamedQuery(
+        name = "Author.findByNamedQuery",
+        query = "select a from Author a where a.age >= :age"
+)
 public class Author extends BaseEntity{
 
     //since the id is same for all the classes it is moved to the base entity
@@ -59,6 +64,8 @@ public class Author extends BaseEntity{
     private int age;
 
     @ManyToMany(mappedBy = "authors")
+    @ToString.Exclude
+    @HashCodeExclude
     private List<Course> courses;
 
 }

@@ -1,6 +1,7 @@
 package org.example.learning_jpa;
 
 import com.github.javafaker.Faker;
+import jakarta.transaction.Transactional;
 import org.example.learning_jpa.models.Author;
 import org.example.learning_jpa.models.Video;
 import org.example.learning_jpa.repository.AuthorRepository;
@@ -45,7 +46,10 @@ public class LearningJpaApplication {
 //            repository.save(author);
 //            repository.updateAuthor(22, 1);
 
-            repository.updateAllAuthor(100);
+//            repository.updateAllAuthor(100);
+
+            repository.findByNamedQuery(60)
+                    .forEach(System.out::println);
 
             /*var video = Video.builder()
                     .name("abc")
