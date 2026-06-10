@@ -48,8 +48,10 @@ public class LearningJpaApplication {
 
 //            repository.updateAllAuthor(100);
 
+            repository.updateByNamedQuery(90);
             repository.findByNamedQuery(60)
                     .forEach(System.out::println);
+
 
             /*var video = Video.builder()
                     .name("abc")

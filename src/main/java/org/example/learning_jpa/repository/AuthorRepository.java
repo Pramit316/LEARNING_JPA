@@ -15,6 +15,10 @@ public interface AuthorRepository extends JpaRepository<Author, Integer> {
     @Transactional
     List<Author> findByNamedQuery(@Param("age") int age);
 
+    @Transactional
+    @Modifying
+    void updateByNamedQuery(@Param("age") int age);
+
     //update Author a set a.age = 22 where a.id = 1
     @Modifying
     @Transactional
