@@ -23,7 +23,7 @@ public class LearningJpaApplication {
             VideoRepository videoRepository
     ) {
         return args -> {
-            /*for(int i = 0; i<50; i++){
+            for(int i = 0; i<50; i++){
                 Faker faker = new Faker();
                 var author = Author.builder()
                         .firstName(faker.name().firstName())
@@ -31,8 +31,21 @@ public class LearningJpaApplication {
                         .age(faker.number().numberBetween(19,59))
                         .email("test" + i + "@gmail.com")
                         .build();
-                repository.save(author);
-            }*/
+            }
+
+//            update author with ID = 1
+
+            var author = Author.builder()
+                    .id(1)
+                    .firstName("pramit")
+                    .lastName("Bhattarai")
+                    .age(23)
+                    .email("pramit@gmail.com")
+                    .build();
+//            repository.save(author);
+//            repository.updateAuthor(22, 1);
+
+            repository.updateAllAuthor(100);
 
             /*var video = Video.builder()
                     .name("abc")
